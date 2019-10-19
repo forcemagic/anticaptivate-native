@@ -35,7 +35,7 @@ public class JobExecutor extends BroadcastReceiver {
         Request req = new Request.Builder().url(CAPTIVE_URL).build();
         try {
             int status = htcli.newCall(req).execute().code();
-            return status != 204;
+            return status == 204;
         } catch (IOException e) {
             e.printStackTrace();
             return false;
